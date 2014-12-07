@@ -25,7 +25,7 @@ namespace Assets.Scripts.InputStates
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                cameraMovementComponent.Target = hit.point;
+                cameraMovementComponent.MoveTarget = hit.point;
             }
         }
     }

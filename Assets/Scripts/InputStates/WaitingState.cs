@@ -15,6 +15,12 @@ namespace Assets.Scripts.InputStates
                 return new PressedState();
             }
 
+            float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
+            if (scrollWheel != 0)
+            {
+                return new ZoomState(scrollWheel);
+            }
+
             return this;
         }
     }

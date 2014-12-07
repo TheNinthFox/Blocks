@@ -27,6 +27,4 @@ public class PlayerInput : MonoBehaviour
     {
         _inputState = _inputState.processInput(gameObject);
     }
-
-
 }
