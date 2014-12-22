@@ -3,8 +3,11 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour {
 
-    public GameObject Target;
-    public float Speed;
+    [SerializeField]
+    private GameObject Target;
+
+    [SerializeField]
+    private float Speed;
 
     void Awake() 
     {

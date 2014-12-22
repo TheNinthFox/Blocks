@@ -2,9 +2,15 @@
 using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
-    public GameObject HitPlane;
-    public float MoveSpeed;
-    public float ZoomSpeed;
+    [SerializeField]
+    private GameObject HitPlane;
+
+    [SerializeField]
+    private float MoveSpeed;
+    
+    [SerializeField]
+    private float ZoomSpeed;
+
     public Vector3 MoveTarget { get; set; }
     public Vector3 ZoomTarget { get; set; }
     private const float MIN_ZOOM = -4.0f;

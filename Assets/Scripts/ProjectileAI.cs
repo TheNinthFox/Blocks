@@ -3,9 +3,35 @@ using System.Collections;
 
 public class ProjectileAI : MonoBehaviour {
 
-    public GameObject _target;
-    //public GameObject Target { get; set; }
-    public float Speed;
+    private GameObject _target;
+    public GameObject Target
+    {
+        get
+        {
+            return _target;
+        }
+
+        set
+        {
+            _target = value;
+        }
+    }
+
+    private GameObject _defense;
+    public GameObject Defense
+    {
+        get
+        {
+            return _defense;
+        }
+        set
+        {
+            _defense = value;
+        }
+    }
+
+    [SerializeField]
+    private float Speed;
 
 	
 	void Update ()
@@ -18,6 +44,11 @@ public class ProjectileAI : MonoBehaviour {
             Vector3 direction = position / distance;
 
             this.transform.position += direction * Speed * Time.deltaTime;
+        }
+        else
+        {
+            ShooterAI shooter = _defense.GetComponent<ShooterAI>();
+            _target = shooter.Target;
         }
 	}
 

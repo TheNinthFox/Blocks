@@ -2,7 +2,10 @@
 using System.Collections;
 
 public class EnemySpawner : MonoBehaviour {
-    public float SpawnDelay;
+
+    [SerializeField]
+    private float SpawnDelay;
+
     private float timer;
 
 	void Awake ()
