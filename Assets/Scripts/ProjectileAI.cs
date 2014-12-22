@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Interfaces;
 
 public class ProjectileAI : MonoBehaviour {
 
@@ -54,6 +55,8 @@ public class ProjectileAI : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+        IDamageable enemy = other.gameObject.GetComponent<EnemyAI>() as IDamageable;
+        enemy.takeDamage(34);
         Destroy(this.gameObject);
     }
 }

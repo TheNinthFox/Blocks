@@ -20,7 +20,8 @@ public class EnemySpawner : MonoBehaviour {
         {
             GameObject gameObject = Instantiate(Resources.Load("Enemy")) as GameObject;
             GameObject World = GameObject.Find("World");
-            gameObject.transform.parent = World.transform;
+            gameObject.transform.SetParent(World.transform);
+            gameObject.transform.position = this.transform.position;
             timer = 0f;
         }
 	}
